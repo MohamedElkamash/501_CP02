@@ -4,23 +4,8 @@ import finite_difference as fd
 from constants import *
 from data import *
 import plots
-import analytical
 
-""" r = np.linspace(1e-10,R, 10)
-t = np.linspace(0,300, 10000)
-T = fd.computeT(r,t)
-
-
-plt.plot(r, T[:,9999])
-plt.show() """
-
-#Plotting and printing eigenvalues
-eigenvalues = analytical.computeEigenvalues()
-plots.eigenvalues()
-#export.eigenvalues()
-
-
-""" #Grid Refinment
+#Grid Refinment
 fig_grid_ref, axs_grid_ref, axs_grid_ref_list = plots.six_subplots()
 legend_grid = []
 n_elements = 2
@@ -45,7 +30,7 @@ for i in range(n_grid_trials):
     
 plt.legend(legend_grid, loc = "center", bbox_to_anchor = (1.3, 1.6), fontsize = 15)
 plt.savefig("grid_ref.png", bbox_inches='tight', dpi = 400)
-plt.close() """
+plt.close()
 
 
 #time step study
@@ -59,4 +44,3 @@ t = np.linspace(0, t_max, int(t_max/delta_t) + 1)
 T_numerical = np.empty([len(r), len(t)])
 T_numerical = fd.computeT(r, t)
 plots.T_numerical(r, T_numerical, delta_t)
-
