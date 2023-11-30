@@ -10,7 +10,7 @@ from data import *
 import finite_difference as fd
 
 #mesh
-n_points = 20
+n_points = 100
 r = np.linspace(0, R, n_points)
 
 #time axis
