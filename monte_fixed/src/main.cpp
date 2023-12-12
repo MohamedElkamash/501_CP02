@@ -6,12 +6,14 @@
 #include "Finalizer.h"
 #include "Surface.h"
 #include "Cell.h"
+#include "Source.h"
 
 #include <iostream>
 #include <fstream>
 #include <chrono>
 #include <vector>
 #include <map>
+#include <array>
 
 
 
@@ -22,6 +24,11 @@ int main()
 
     //Create geometry
     Geometry geometry(parameters);
+
+    //Create source
+    Source source(parameters);
+    
+
 
 
  

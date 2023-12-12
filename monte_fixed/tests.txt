@@ -47,3 +47,13 @@
         std::cout << "axis = " << surface.axis() << '\n';
         std::cout << "coordinate = " << surface.coordinate() << '\n';
     }
+
+        for(int i = 0; i < 100; ++i)
+    {
+        int index = source.samplePositionIndex();
+        std::array<double, N_DIMS> position = source.sampledPosition(index);
+        std::array<double, N_DIMS> mu = source.sampledDirection(index);
+        std::cout << "index = " << index << '\n';
+        std::cout << "x = " << position[0] << "  y = " << position[1] << "  z = " << position[2] << '\n';
+        std::cout << "mu_x = " << mu[0] << "  mu_y = " << mu[1] << "  mu_z = " << mu[2] << '\n';
+    }

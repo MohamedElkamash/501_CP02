@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Global.h"
+
 #include <string>
 #include <array>
 #include <vector>
@@ -9,7 +11,7 @@
 
 class InputParameters
 {
-    typedef std::array<int, 3> Id_3d;
+    typedef std::array<int, N_DIMS> Id_3d;
 
     public:
     
@@ -35,6 +37,14 @@ class InputParameters
     //each cell has one material only but each material can have many cells
     std::map<Id_3d, int> cellMaterialMap();
 
+    std::vector<std::array<double, 3>> sourcePositions();
+
+    std::vector<double> sourceProbability();
+
+    std::vector<char> sourceAngularDistribution();
+
+    std::vector<std::array<double, 3>> sourceDirectionCosines();
+
     private:
 
     //number of cells 
@@ -55,4 +65,13 @@ class InputParameters
     //maps each cell with its material
     //each cell has one material only but each material can have many cells
     std::map<Id_3d, int> _cell_material_map;
+
+    //source information
+    std::vector<std::array<double, 3>> _source_positions;
+
+    std::vector<double> _source_probability;
+
+    std::vector<char> _source_angular_distribution;
+
+    std::vector<std::array<double, N_DIMS>> _source_direction_cosines;
 };
